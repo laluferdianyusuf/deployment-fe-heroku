@@ -57,6 +57,7 @@ export default function Register() {
     } catch (err) {
       console.log(err);
       const response = err.response.data;
+      console.log(response);
 
       setErrorResponse({
         isError: true,
