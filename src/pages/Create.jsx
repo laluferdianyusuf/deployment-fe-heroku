@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Container, Button, Alert, Card } from "react-bootstrap";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import "./All.css";
 
 export default function Create() {
   const navigate = useNavigate();
