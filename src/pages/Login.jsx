@@ -43,7 +43,7 @@ export default function Login() {
       };
 
       const loginRequest = await axios.post(
-        "http://localhost:2000/auth/login",
+        "https://api-instagram-be.herokuapp.com/login",
         userToLoginPayload
       );
 
@@ -73,7 +73,7 @@ export default function Login() {
       };
 
       const loginGoogleRequest = await axios.post(
-        "http://localhost:2000/auth/login-google",
+        "https://api-instagram-be.herokuapp.com/login-google",
         userToLoginPayload
       );
 

@@ -28,7 +28,7 @@ export default function Update() {
       const token = localStorage.getItem("token");
 
       const createRequest = await axios.put(
-        `http://localhost:2000/posts/${id}`,
+        `https://api-instagram-be.herokuapp.com/posts/${id}`,
         createPostPayload,
         {
           headers: {

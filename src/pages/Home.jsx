@@ -73,7 +73,7 @@ function Home() {
 
         // 2. Check token validity from API
         const currentUserRequest = await axios.get(
-          "http://localhost:2000/auth/me",
+          "https://api-instagram-be.herokuapp.com/auth/me",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -111,7 +111,9 @@ function Home() {
 
   const fetchData = async () => {
     //fetching
-    const response = await axios.get("http://localhost:2000/api/posts");
+    const response = await axios.get(
+      "https://api-instagram-be.herokuapp.com/api/posts"
+    );
     //get response data
     const data = await response.data.data.Loaded_Posts;
     console.log(data);
@@ -126,7 +128,7 @@ function Home() {
       const token = localStorage.getItem("token");
 
       const createRequest = await axios.delete(
-        `http://localhost:2000/posts/${postDelete.id}`,
+        `https://api-instagram-be.herokuapp.com/posts/${postDelete.id}`,
 
         {
           headers: {
@@ -235,7 +237,7 @@ function Home() {
               <Card className="card-container">
                 <div className="card-image">
                   <img
-                    src={`http://localhost:2000/public/files/${post.picture}`}
+                    src={`https://api-instagram-be.herokuapp.com/public/files/${post.picture}`}
                     alt=""
                   />
                   <Card.Body>

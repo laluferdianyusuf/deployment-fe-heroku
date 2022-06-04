@@ -47,7 +47,7 @@ export default function Register() {
       };
 
       const registerRequest = await axios.post(
-        "http://localhost:2000/auth/register",
+        "https://api-instagram-be.herokuapp.com/auth/register",
         userToRegisterPayload
       );
 
