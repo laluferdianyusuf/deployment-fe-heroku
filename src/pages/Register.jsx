@@ -56,12 +56,11 @@ export default function Register() {
       if (registerResponse.status) navigate("/login");
     } catch (err) {
       console.log(err);
-      const response = err.response;
-      console.log(response);
+      const response = err.response.data;
 
       setErrorResponse({
         isError: true,
-        message: err.message,
+        message: response.message,
       });
     }
   };
