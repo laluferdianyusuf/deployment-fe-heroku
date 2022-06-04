@@ -1,0 +1,97 @@
+body {
+  background-color: black !important;
+  color: white !important;
+}
+.button-action {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.button-action:hover {
+  display: block;
+}
+
+.card-image:hover + .button-action {
+  display: block;
+  float: right;
+  opacity: 0.5;
+}
+
+.card-image img {
+  border-radius: 7px;
+  border-bottom: 1px solid rgb(119, 0, 0);
+  width: 99.6%;
+  height: 400px;
+  padding: 2px 1px 0 2px;
+}
+
+.card-column .card-container {
+  background-color: #000000;
+  border: 2px solid rgb(119, 0, 0);
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+.card-column .card-container:hover {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-column .card-container:hover:before {
+  content: "";
+  background-image: conic-gradient(rgb(119, 0, 0) 20deg, transparent 120deg);
+  width: 150%;
+  height: 180%;
+  position: absolute;
+  z-index: -10;
+  animation: spin 2s linear infinite;
+}
+
+.card-column .card-container:hover:after {
+  content: "";
+  width: 99%;
+  height: 99%;
+  background: black;
+  position: absolute;
+  z-index: -10;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dropdown-content .dropdown-menu {
+  text-align: center;
+  width: 170px;
+  border-radius: 0px;
+  background-color: #333;
+  color: white;
+  border: 1px solid rgb(119, 0, 0);
+}
