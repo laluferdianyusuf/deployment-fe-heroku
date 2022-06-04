@@ -241,12 +241,8 @@ function Home() {
                     alt=""
                   />
                   <Card.Body>
-                    <Card.Title style={{ height: "50px" }}>
-                      {post.title}{" "}
-                    </Card.Title>
-                    <Card.Text
-                      style={{ textAlign: "justify", height: "150px" }}
-                    >
+                    <Card.Title>{post.title} </Card.Title>
+                    <Card.Text style={{ textAlign: "justify" }}>
                       {post.description}
                     </Card.Text>
                   </Card.Body>
