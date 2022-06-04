@@ -217,7 +217,7 @@ function Home() {
               {user.name}
             </Dropdown.Toggle>
 
-            <Dropdown.Menu className="dropdown-menu">
+            <Dropdown.Menu className="dropdown-menu w-100">
               <p>{user.name}</p>
 
               <Button
