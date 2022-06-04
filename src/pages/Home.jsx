@@ -155,7 +155,7 @@ function Home() {
 
       setErrorResponse({
         isError: true,
-        message: response,
+        message: response.message,
       });
     }
   };
