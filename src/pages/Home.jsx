@@ -151,6 +151,7 @@ function Home() {
       setIsRefresh(true);
     } catch (err) {
       const response = err.response.data;
+      console.log(response);
 
       setErrorResponse({
         isError: true,
