@@ -1,13 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  Form,
-  Container,
-  Button,
-  Alert,
-  Row,
-  Col,
-  Card,
-} from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
@@ -99,7 +91,7 @@ export default function Login() {
         </div>
 
         <div className="user-box">
-          <input type="password" ref={emailField} name="" required="" />
+          <input type="password" ref={passwordField} name="" required="" />
           <label>Password</label>
         </div>
 
