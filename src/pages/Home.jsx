@@ -199,7 +199,10 @@ function Home() {
             </Button>
           </Link>
 
-          <h4 className="mb-0 ms-auto" style={{ alignSelf: "center" }}>
+          <h4
+            className="mb-0 ms-auto text-white"
+            style={{ alignSelf: "center" }}
+          >
             MARVEL CINEMATIC UNIVERSE
           </h4>
 
