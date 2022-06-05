@@ -103,9 +103,9 @@ export default function Login() {
           <label>Password</label>
         </div>
 
-        <p>
+        <p className="text-warning">
           Don't have any account ?{" "}
-          <Link to="/register" className="text-decoration-none">
+          <Link to="/register" className="text-decoration-none text-danger">
             Sign up
           </Link>
         </p>
@@ -113,7 +113,7 @@ export default function Login() {
           <Alert variant="danger">{errorResponse.message}</Alert>
         )}
 
-        <div>
+        <div className="d-flex gap-2">
           <Button className="button-submit" type="submit">
             <span></span>
             <span></span>
@@ -122,7 +122,14 @@ export default function Login() {
             Log in
           </Button>
 
-          <GoogleOAuthProvider clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com">
+          <GoogleOAuthProvider
+            className="button-submit"
+            clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
             <GoogleLogin
               onSuccess={onLoginGoogleSuccess}
               onError={() => {
