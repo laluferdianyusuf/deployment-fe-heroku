@@ -85,9 +85,13 @@ export default function Login() {
           <label>Password</label>
         </div>
 
-        <p style={{ color: "red" }}>
+        <p style={{ color: "white" }}>
           Don't have any account ?{" "}
-          <Link to="/register" className="text-decoration-none text-danger">
+          <Link
+            to="/register"
+            className="text-decoration-none"
+            style={{ color: "red" }}
+          >
             Sign up
           </Link>
         </p>
