@@ -306,8 +306,7 @@ body {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   border: none;
   border-bottom: 1px solid #fff;
   outline: none;
@@ -326,12 +325,6 @@ body {
 }
 
 .register-box .signup-box input:focus ~ label {
-  top: -20px;
-  left: 0;
-  color: #f40303;
-  font-size: 12px;
-}
-.register-box .signup-box select:focus ~ label {
   top: -20px;
   left: 0;
   color: #f40303;

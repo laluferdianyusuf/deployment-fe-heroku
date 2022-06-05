@@ -58,7 +58,6 @@ export default function Register() {
 
       <form onSubmit={onRegister}>
         <div className="signup-box">
-          <label>Role</label>
           <select ref={roleField} style={buttonBorder}>
             <option hidden>Choose a role</option>
             <option value="admin">Admin</option>
@@ -67,18 +66,18 @@ export default function Register() {
         </div>
 
         <div className="signup-box">
-          <label>Name</label>
           <input type="text" ref={nameField} />
+          <label>Name</label>
         </div>
 
         <div className="signup-box">
-          <label>Email</label>
           <input type="text" ref={emailField} />
+          <label>Email</label>
         </div>
 
         <div className="signup-box">
-          <label>Password</label>
           <input type="password" ref={passwordField} />
+          <label>Password</label>
         </div>
 
         <p>
