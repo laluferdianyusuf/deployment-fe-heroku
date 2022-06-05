@@ -90,30 +90,18 @@ export default function Login() {
   };
 
   return (
-    <Container className="login-box">
+    <div className="login-box">
       <h2>Login</h2>
       <Form className="form-login" onSubmit={onLogin}>
-        <Form.Group className="user-box">
-          <Form.Control
-            className="form-input"
-            type="text"
-            ref={emailField}
-            name=""
-            required=""
-          />
-          <Form.Label className="form-label">Email</Form.Label>
-        </Form.Group>
+        <div className="user-box">
+          <input type="text" ref={emailField} name="" required="" />
+          <label>Email</label>
+        </div>
 
-        <Form.Group className="user-box">
-          <Form.Control
-            className="form-input"
-            type="password"
-            ref={passwordField}
-            name=""
-            required=""
-          />
-          <Form.Label className="form-label">Password</Form.Label>
-        </Form.Group>
+        <div className="user-box">
+          <input type="password" ref={emailField} name="" required="" />
+          <label>Password</label>
+        </div>
 
         <p>
           Don't have any account ?{" "}
@@ -144,6 +132,6 @@ export default function Login() {
           </GoogleOAuthProvider>
         </div>
       </Form>
-    </Container>
+    </div>
   );
 }

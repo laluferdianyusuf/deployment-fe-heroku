@@ -136,7 +136,7 @@ body {
   position: relative;
 }
 
-.login-box .user-box .form-input {
+.login-box .user-box input {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -147,7 +147,7 @@ body {
   outline: none;
   background: transparent;
 }
-.login-box .user-box .form-label {
+.login-box .user-box label {
   position: absolute;
   top: 0;
   left: 0;
@@ -158,15 +158,15 @@ body {
   transition: 0.5s;
 }
 
-.login-box .user-box .form-input:focus ~ .form-label,
-.login-box .user-box .form-input:valid ~ .form-label {
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
   color: #f40303;
   font-size: 12px;
 }
 
-.login-box .form-login .button-submit {
+.login-box form-login button-submit {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -182,7 +182,7 @@ body {
   border: 2px solid transparent;
 }
 
-.login-box .button-submit:hover {
+.login-box button-submit:hover {
   background: #f40303;
   color: #fff;
   border-radius: 5px;
@@ -191,12 +191,12 @@ body {
   border: 2px solid transparent;
 }
 
-.login-box .button-submit span {
+.login-box button-submit span {
   position: absolute;
   display: block;
 }
 
-.login-box .button-submit span:nth-child(1) {
+.login-box button-submit span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -215,7 +215,7 @@ body {
   }
 }
 
-.login-box .button-submit span:nth-child(2) {
+.login-box button-submit span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -235,7 +235,7 @@ body {
   }
 }
 
-.login-box .button-submit span:nth-child(3) {
+.login-box button-submit span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -255,7 +255,7 @@ body {
   }
 }
 
-.login-box .button-submit span:nth-child(4) {
+.login-box button-submit span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
