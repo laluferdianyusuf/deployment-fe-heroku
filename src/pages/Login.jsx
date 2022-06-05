@@ -103,7 +103,7 @@ export default function Login() {
           <label>Password</label>
         </div>
 
-        <p className="text-warning">
+        <p className="text-white">
           Don't have any account ?{" "}
           <Link to="/register" className="text-decoration-none text-danger">
             Sign up
