@@ -29,7 +29,7 @@ body {
 
 .card-column .card-container {
   background: rgba(0, 0, 0, 0.5);
-  border: 2px solid rgb(119, 0, 0);
+  border: 2px solid #212529;
   border-radius: 8px;
   transition: all 0.5s ease;
   color: white;
