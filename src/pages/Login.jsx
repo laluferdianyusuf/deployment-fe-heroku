@@ -76,12 +76,12 @@ export default function Login() {
       <h2>Login</h2>
       <form onSubmit={onLogin}>
         <div className="user-box">
-          <input type="text" ref={emailField} name="" required="" />
+          <input type="text" ref={emailField} required />
           <label>Email</label>
         </div>
 
         <div className="user-box">
-          <input type="password" ref={passwordField} name="" required="" />
+          <input type="password" ref={passwordField} required />
           <label>Password</label>
         </div>
 

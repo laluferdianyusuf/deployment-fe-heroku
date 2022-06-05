@@ -66,17 +66,17 @@ export default function Register() {
         </div>
 
         <div className="signup-box">
-          <input type="text" ref={nameField} />
+          <input type="text" ref={nameField} required />
           <label>Name</label>
         </div>
 
         <div className="signup-box">
-          <input type="text" ref={emailField} />
+          <input type="text" ref={emailField} required />
           <label>Email</label>
         </div>
 
         <div className="signup-box">
-          <input type="password" ref={passwordField} />
+          <input type="password" ref={passwordField} required />
           <label>Password</label>
         </div>
 
