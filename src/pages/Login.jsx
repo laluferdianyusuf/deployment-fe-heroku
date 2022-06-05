@@ -92,7 +92,7 @@ export default function Login() {
   return (
     <div className="login-box">
       <h2>Login</h2>
-      <Form className="form-login" onSubmit={onLogin}>
+      <form onSubmit={onLogin}>
         <div className="user-box">
           <input type="text" ref={emailField} name="" required="" />
           <label>Email</label>
@@ -113,7 +113,7 @@ export default function Login() {
           <Alert variant="danger">{errorResponse.message}</Alert>
         )}
 
-        <div className="d-flex gap-2">
+        <div className="d-flex gap-1">
           <Button className="button-submit" type="submit">
             <span></span>
             <span></span>
@@ -122,14 +122,7 @@ export default function Login() {
             Log in
           </Button>
 
-          <GoogleOAuthProvider
-            className="button-submit"
-            clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <GoogleOAuthProvider clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com">
             <GoogleLogin
               onSuccess={onLoginGoogleSuccess}
               onError={() => {
@@ -138,7 +131,7 @@ export default function Login() {
             />
           </GoogleOAuthProvider>
         </div>
-      </Form>
+      </form>
     </div>
   );
 }
