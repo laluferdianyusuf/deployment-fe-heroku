@@ -10,16 +10,6 @@ export default function Login() {
   const emailField = useRef("");
   const passwordField = useRef("");
 
-  const buttonPrimary = {
-    backgroundColor: "rgb(10, 2, 77)",
-    borderRadius: "0px",
-  };
-
-  const buttonBorder = {
-    border: "1px solid darkblue",
-    borderRadius: "0px",
-  };
-
   const [errorResponse, setErrorResponse] = useState({
     isError: false,
     message: "",
@@ -95,7 +85,7 @@ export default function Login() {
           <label>Password</label>
         </div>
 
-        <p className="text-white">
+        <p style={{ color: "red" }}>
           Don't have any account ?{" "}
           <Link to="/register" className="text-decoration-none text-danger">
             Sign up
@@ -105,7 +95,7 @@ export default function Login() {
           <Alert variant="danger">{errorResponse.message}</Alert>
         )}
 
-        <div className="d-flex gap-1">
+        <div className="d-flex gap-2">
           <Button className="button-submit" type="submit">
             <span></span>
             <span></span>
@@ -114,7 +104,7 @@ export default function Login() {
             Log in
           </Button>
 
-          <div style={{ marginTop: "47px" }}>
+          <div style={{ marginTop: "45px" }}>
             <GoogleOAuthProvider clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com">
               <GoogleLogin
                 onSuccess={onLoginGoogleSuccess}
