@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import loginImage from "../images/key.png";
+import "./All.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -90,69 +90,60 @@ export default function Login() {
   };
 
   return (
-    <Card className="w-50 text-black" style={{ margin: "6% 25%" }}>
-      <Container className="my-5">
-        <Row className="justify-content-md-center">
-          <h1 className="mb-3 text-center">Sign In</h1>
-          <Col md={7}>
-            <Form onSubmit={onLogin}>
-              <Form.Group className="mb-3">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="text"
-                  ref={emailField}
-                  placeholder="Email"
-                  style={buttonBorder}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  style={buttonBorder}
-                  type="password"
-                  ref={passwordField}
-                  placeholder="Password"
-                />
-              </Form.Group>
-              <p>
-                Don't have any account ?{" "}
-                <Link to="/register" className="text-decoration-none">
-                  Sign up
-                </Link>
-              </p>
-              {errorResponse.isError && (
-                <Alert variant="danger">{errorResponse.message}</Alert>
-              )}
-              <div className="text-center d-flex">
-                <Button
-                  className="w-50 text-center me-3"
-                  style={buttonPrimary}
-                  type="submit"
-                >
-                  Log in
-                </Button>
+    <Container className="login-box">
+      <h2>Login</h2>
+      <Form className="form-login" onSubmit={onLogin}>
+        <Form.Group className="user-box">
+          <Form.Control
+            className="form-input"
+            type="text"
+            ref={emailField}
+            name=""
+            required=""
+          />
+          <Form.Label className="form-label">Email</Form.Label>
+        </Form.Group>
 
-                <GoogleOAuthProvider clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com">
-                  <GoogleLogin
-                    onSuccess={onLoginGoogleSuccess}
-                    onError={() => {
-                      console.log("Login Failed");
-                    }}
-                  />
-                </GoogleOAuthProvider>
-              </div>
-            </Form>
-          </Col>
-          <Col md={4}>
-            <img
-              src={loginImage}
-              className="w-100"
-              style={{ margin: "20% 25% 0 10px" }}
-              alt=""
+        <Form.Group className="user-box">
+          <Form.Control
+            className="form-input"
+            type="password"
+            ref={passwordField}
+            name=""
+            required=""
+          />
+          <Form.Label className="form-label">Password</Form.Label>
+        </Form.Group>
+
+        <p>
+          Don't have any account ?{" "}
+          <Link to="/register" className="text-decoration-none">
+            Sign up
+          </Link>
+        </p>
+        {errorResponse.isError && (
+          <Alert variant="danger">{errorResponse.message}</Alert>
+        )}
+
+        <div>
+          <Button className="button-submit" type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Log in
+          </Button>
+
+          <GoogleOAuthProvider clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com">
+            <GoogleLogin
+              onSuccess={onLoginGoogleSuccess}
+              onError={() => {
+                console.log("Login Failed");
+              }}
             />
-          </Col>
-        </Row>
-      </Container>
-    </Card>
+          </GoogleOAuthProvider>
+        </div>
+      </Form>
+    </Container>
   );
 }
