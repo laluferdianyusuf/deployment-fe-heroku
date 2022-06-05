@@ -90,7 +90,7 @@ export default function Register() {
         {errorResponse.isError && (
           <Alert variant="danger">{errorResponse.message}</Alert>
         )}
-        <div className="text-center">
+        <div>
           <Button className="button-submit" type="submit">
             <span></span>
             <span></span>

@@ -302,7 +302,7 @@ body {
   background: transparent;
 }
 
-.register-box .signup-box select option {
+.register-box .signup-box select {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -326,6 +326,12 @@ body {
 }
 
 .register-box .signup-box input:focus ~ label {
+  top: -20px;
+  left: 0;
+  color: #f40303;
+  font-size: 12px;
+}
+.register-box .signup-box select:focus ~ label {
   top: -20px;
   left: 0;
   color: #f40303;
