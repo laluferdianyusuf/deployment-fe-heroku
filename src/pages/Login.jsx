@@ -122,17 +122,16 @@ export default function Login() {
             Log in
           </Button>
 
-          <GoogleOAuthProvider
-            style={{ marginTop: "40px" }}
-            clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com"
-          >
-            <GoogleLogin
-              onSuccess={onLoginGoogleSuccess}
-              onError={() => {
-                console.log("Login Failed");
-              }}
-            />
-          </GoogleOAuthProvider>
+          <div style={{ marginTop: "40px" }}>
+            <GoogleOAuthProvider clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com">
+              <GoogleLogin
+                onSuccess={onLoginGoogleSuccess}
+                onError={() => {
+                  console.log("Login Failed");
+                }}
+              />
+            </GoogleOAuthProvider>
+          </div>
         </div>
       </form>
     </div>
