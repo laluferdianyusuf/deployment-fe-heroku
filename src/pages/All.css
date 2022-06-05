@@ -302,28 +302,17 @@ body {
   background: transparent;
 }
 
-.register-box .signup-box option {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-
 .register-box .signup-box select {
-  width: 100%;
-  padding: 10px 0;
   font-size: 16px;
   margin-bottom: 25px;
   color: white;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
+  border: 1px solid #fff;
   background: transparent;
+}
+
+.register-box .signup-box option {
+  font-size: 16px;
+  color: black;
 }
 
 .register-box .signup-box label {
