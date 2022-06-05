@@ -303,10 +303,12 @@ body {
 }
 
 .register-box .signup-box select {
+  width: 100%;
+  padding: 10px 0;
   font-size: 16px;
   margin-bottom: 25px;
   color: white;
-  border: 1px solid #fff;
+  outline: 1px solid white;
   background: transparent;
 }
 
