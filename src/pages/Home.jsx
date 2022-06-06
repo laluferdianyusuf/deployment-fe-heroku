@@ -175,159 +175,161 @@ function Home() {
   // };
 
   return isLoggedIn ? (
-    <Container>
-      {successResponse.isSuccess && (
-        <Alert
-          variant="success"
-          onClose={() => setSuccessResponse(true)}
-          dismissible
-          style={buttonBorder}
-        >
-          {successResponse.message}
-        </Alert>
-      )}
-
-      {errorResponse.isError && (
-        <Alert
-          variant="danger"
-          onClose={() => setErrorResponse(true)}
-          dismissible
-          style={buttonBorder}
-        >
-          {errorResponse.message}
-        </Alert>
-      )}
-
+    <>
       {loading ? (
         <div className="text-center" style={{ marginTop: "15rem" }}>
           <ClipLoader color={color} loading={loading} size={35} />
         </div>
       ) : (
-        <div className="p-3">
-          <div className="d-flex mb-5 dropdown-content">
-            <Link to="/about">
-              <Button variant="success" style={buttonSuccess}>
-                Go to about page
-              </Button>
-            </Link>
-
-            <h4
-              className="mb-0 ms-auto text-white"
-              style={{ alignSelf: "center" }}
+        <Container>
+          {successResponse.isSuccess && (
+            <Alert
+              variant="success"
+              onClose={() => setSuccessResponse(true)}
+              dismissible
+              style={buttonBorder}
             >
-              MARVEL CINEMATIC UNIVERSE
-            </h4>
+              {successResponse.message}
+            </Alert>
+          )}
 
-            <Link to="/create" className="ms-auto">
-              <Button variant="primary" style={buttonPrimary}>
-                Create
-              </Button>
-            </Link>
+          {errorResponse.isError && (
+            <Alert
+              variant="danger"
+              onClose={() => setErrorResponse(true)}
+              dismissible
+              style={buttonBorder}
+            >
+              {errorResponse.message}
+            </Alert>
+          )}
 
-            <Dropdown className="ms-2">
-              <Dropdown.Toggle
-                variant="outline-secondary"
-                style={buttonBorder}
-                id="dropdown-basic"
-              >
-                {user.name}
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu className="dropdown-menu w-100">
-                <p>{user.name}</p>
-
-                <Button
-                  variant="danger"
-                  style={buttonDanger}
-                  onClick={(e) => logout(e)}
-                >
-                  Logout
+          <div className="p-3">
+            <div className="d-flex mb-5 dropdown-content">
+              <Link to="/about">
+                <Button variant="success" style={buttonSuccess}>
+                  Go to about page
                 </Button>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
+              </Link>
 
-          <Row>
-            {posts.map((post) => (
-              <Col md={4} key={post.id} className="card-column mb-4">
-                <Card className="card-container">
-                  <div className="card-image">
-                    <img
-                      src={`https://api-instagram-be.herokuapp.com/public/files/${post.picture}`}
-                      alt=""
-                    />
-                    <Card.Body>
-                      <Card.Title style={{ height: "55px" }}>
-                        {post.title}{" "}
-                      </Card.Title>
-                      <Card.Text
-                        style={{ textAlign: "justify", height: "140px" }}
-                      >
-                        {post.description}
-                      </Card.Text>
-                    </Card.Body>
-                  </div>
-                  <div className="button-action" style={{ width: "20px" }}>
-                    <a
-                      onClick={(e) => handleShowModal(e, post)}
-                      style={{ color: "red", cursor: "pointer" }}
-                    >
-                      <TiDeleteOutline style={{ fontSize: "26px" }} />
-                    </a>
-
-                    <Link
-                      to={`/update/${post.id}`}
-                      style={{ color: "white", fontSize: "24px" }}
-                    >
-                      <BiEdit style={{ fontSize: "24px" }} />
-                    </Link>
-                  </div>
-                </Card>
-              </Col>
-            ))}
-
-            <Modal
-              show={showModal}
-              onHide={handleCloseModal}
-              aria-labelledby="contained-modal-title-vcenter"
-              centered
-            >
-              <Modal.Header
-                className="d-block"
-                style={{
-                  borderBottom: "1px solid rgb(119, 0, 0)",
-                  borderRadius: "8px",
-                }}
+              <h4
+                className="mb-0 ms-auto text-white"
+                style={{ alignSelf: "center" }}
               >
-                <Modal.Title className="text-black text-center">
-                  ------ Are You Sure ? ------
-                </Modal.Title>
-                <Modal.Body className="text-center">
-                  <img src={DeleteImage} alt="" />
-                </Modal.Body>
-              </Modal.Header>
-              <Modal.Footer style={{ borderTop: "2px solid white" }}>
-                <Button
-                  variant="secondary"
+                MARVEL CINEMATIC UNIVERSE
+              </h4>
+
+              <Link to="/create" className="ms-auto">
+                <Button variant="primary" style={buttonPrimary}>
+                  Create
+                </Button>
+              </Link>
+
+              <Dropdown className="ms-2">
+                <Dropdown.Toggle
+                  variant="outline-secondary"
                   style={buttonBorder}
-                  onClick={handleCloseModal}
+                  id="dropdown-basic"
                 >
-                  Close
-                </Button>
+                  {user.name}
+                </Dropdown.Toggle>
 
-                <Button
-                  variant="danger"
-                  style={buttonDanger}
-                  onClick={(e) => onDelete(e)}
+                <Dropdown.Menu className="dropdown-menu w-100">
+                  <p>{user.name}</p>
+
+                  <Button
+                    variant="danger"
+                    style={buttonDanger}
+                    onClick={(e) => logout(e)}
+                  >
+                    Logout
+                  </Button>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+
+            <Row>
+              {posts.map((post) => (
+                <Col md={4} key={post.id} className="card-column mb-4">
+                  <Card className="card-container">
+                    <div className="card-image">
+                      <img
+                        src={`https://api-instagram-be.herokuapp.com/public/files/${post.picture}`}
+                        alt=""
+                      />
+                      <Card.Body>
+                        <Card.Title style={{ height: "55px" }}>
+                          {post.title}{" "}
+                        </Card.Title>
+                        <Card.Text
+                          style={{ textAlign: "justify", height: "140px" }}
+                        >
+                          {post.description}
+                        </Card.Text>
+                      </Card.Body>
+                    </div>
+                    <div className="button-action" style={{ width: "20px" }}>
+                      <a
+                        onClick={(e) => handleShowModal(e, post)}
+                        style={{ color: "red", cursor: "pointer" }}
+                      >
+                        <TiDeleteOutline style={{ fontSize: "26px" }} />
+                      </a>
+
+                      <Link
+                        to={`/update/${post.id}`}
+                        style={{ color: "white", fontSize: "24px" }}
+                      >
+                        <BiEdit style={{ fontSize: "24px" }} />
+                      </Link>
+                    </div>
+                  </Card>
+                </Col>
+              ))}
+
+              <Modal
+                show={showModal}
+                onHide={handleCloseModal}
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+              >
+                <Modal.Header
+                  className="d-block"
+                  style={{
+                    borderBottom: "1px solid rgb(119, 0, 0)",
+                    borderRadius: "8px",
+                  }}
                 >
-                  YES
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </Row>
-        </div>
+                  <Modal.Title className="text-black text-center">
+                    ------ Are You Sure ? ------
+                  </Modal.Title>
+                  <Modal.Body className="text-center">
+                    <img src={DeleteImage} alt="" />
+                  </Modal.Body>
+                </Modal.Header>
+                <Modal.Footer style={{ borderTop: "2px solid white" }}>
+                  <Button
+                    variant="secondary"
+                    style={buttonBorder}
+                    onClick={handleCloseModal}
+                  >
+                    Close
+                  </Button>
+
+                  <Button
+                    variant="danger"
+                    style={buttonDanger}
+                    onClick={(e) => onDelete(e)}
+                  >
+                    YES
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            </Row>
+          </div>
+        </Container>
       )}
-    </Container>
+    </>
   ) : (
     <Navigate to="/login" replace />
   );
