@@ -4,7 +4,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import "./All.css";
-import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Login() {
   const [loading, setLoading] = useState(true);
@@ -119,7 +118,6 @@ export default function Login() {
           </div>
         </div>
       </form>
-      <ClipLoader color={color} loading={loading} size={35} />
     </div>
   );
 }
