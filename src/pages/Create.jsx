@@ -110,7 +110,7 @@ export default function Create() {
               <Button
                 type="submit"
                 style={buttonBorder}
-                variant="outline-warning"
+                variant="outline-secondary"
                 className="ms-3 "
               >
                 Cancel
