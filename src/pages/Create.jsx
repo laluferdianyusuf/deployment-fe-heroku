@@ -83,21 +83,21 @@ export default function Create() {
         <h1 className="mb-3 text-center">Create Post</h1>
         <Form onSubmit={onCreate} className="form-create">
           <Form.Group className="mb-3 form-create_box">
-            <input type="text" ref={titleField} />
+            <input type="text" ref={titleField} required />
             <label>Title</label>
           </Form.Group>
 
           <Form.Group className="mb-3 form-create_box">
-            <input as="textarea" type="text" ref={descriptionField} />
+            <input as="textarea" type="text" ref={descriptionField} required />
             <label>Description</label>
           </Form.Group>
 
           <Form.Group className="mb-3 form-create_box">
-            <input
+            <Form.Label>Picture</Form.Label>
+            <Form.Control
               type="file"
               onChange={(e) => setPictureField(e.target.files[0])}
             />
-            <label>Picture</label>
           </Form.Group>
 
           {errorResponse.isError && (
