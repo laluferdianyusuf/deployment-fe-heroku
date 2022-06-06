@@ -10,6 +10,15 @@ export default function Update() {
   const [pictureField, setPictureField] = useState();
   const { id } = useParams();
 
+  const buttonBorder = {
+    borderRadius: "0",
+  };
+
+  const buttonPrimary = {
+    backgroundColor: "rgb(10, 2, 77)",
+    borderRadius: "0px",
+  };
+
   const [errorResponse, setErrorResponse] = useState({
     isError: false,
     message: "",
