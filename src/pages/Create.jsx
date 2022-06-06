@@ -81,34 +81,31 @@ export default function Create() {
     >
       <Container className="my-3 w-75">
         <h1 className="mb-3 text-center">Create Post</h1>
-        <Form onSubmit={onCreate}>
-          <Form.Group className="mb-3">
-            <Form.Label>Title</Form.Label>
-            <Form.Control
-              type="text"
-              style={inputBorder}
-              ref={titleField}
-              placeholder="Title"
-            />
+        <Form onSubmit={onCreate} className="form-create">
+          <Form.Group className="mb-3 form-create_box">
+            <input type="text" style={inputBorder} ref={titleField} />
+            <label>Title</label>
           </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Description</Form.Label>
-            <Form.Control
+
+          <Form.Group className="mb-3 form-create_box">
+            <input
               as="textarea"
               type="text"
               style={inputBorder}
               ref={descriptionField}
-              placeholder="Description "
             />
+            <label>Description</label>
           </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Picture</Form.Label>
-            <Form.Control
+
+          <Form.Group className="mb-3 form-create_box">
+            <input
               style={inputBorder}
               type="file"
               onChange={(e) => setPictureField(e.target.files[0])}
             />
+            <label>Picture</label>
           </Form.Group>
+
           {errorResponse.isError && (
             <Alert variant="danger">{errorResponse.message}</Alert>
           )}

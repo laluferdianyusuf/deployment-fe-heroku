@@ -62,6 +62,7 @@ export default function Update() {
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" ref={titleField} placeholder="Title" />
         </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Description</Form.Label>
           <Form.Control
@@ -71,6 +72,7 @@ export default function Update() {
             placeholder="Description "
           />
         </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Picture</Form.Label>
           <Form.Control
@@ -78,6 +80,7 @@ export default function Update() {
             onChange={(e) => setPictureField(e.target.files[0])}
           />
         </Form.Group>
+
         {errorResponse.isError && (
           <Alert variant="danger">{errorResponse.message}</Alert>
         )}

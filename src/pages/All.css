@@ -442,3 +442,34 @@ body {
     bottom: 100%;
   }
 }
+
+/* create */
+.form-create .form-create_box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.form-create .form-create_box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-create .form-create_box input:focus ~ label,
+.form-create .form-create_box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #f40303;
+  font-size: 12px;
+}
