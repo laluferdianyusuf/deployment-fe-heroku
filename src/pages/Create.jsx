@@ -80,7 +80,7 @@ export default function Create() {
       }}
     >
       <Container className="my-3 w-75">
-        <h1 className="mb-3 text-center">Create Post</h1>
+        <h1 className="mb-3 text-center text-white">Create Post</h1>
         <Form onSubmit={onCreate} className="form-create">
           <Form.Group className="mb-3 form-create_box">
             <input type="text" ref={titleField} required />
@@ -93,7 +93,6 @@ export default function Create() {
           </Form.Group>
 
           <Form.Group className="mb-3 form-create_box">
-            <Form.Label>Picture</Form.Label>
             <Form.Control
               type="file"
               onChange={(e) => setPictureField(e.target.files[0])}
