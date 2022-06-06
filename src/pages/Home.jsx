@@ -9,7 +9,6 @@ import {
   Modal,
   Alert,
   Spinner,
-  Carousel,
 } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -19,9 +18,6 @@ import "./All.css";
 import { BiEdit } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import DeleteImage from "../images/folder.png";
-import shangchiImage from "../images/shang-chi.jpg";
-import endgameImage from "../images/endgame.jpg";
-import doctorImage from "../images/doctor-strange.jpeg";
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -183,42 +179,6 @@ function Home() {
         </div>
       ) : (
         <>
-          <Carousel>
-            <Carousel.Item interval={1000}>
-              <img
-                className="d-block w-100"
-                src={shangchiImage}
-                alt="First slide"
-                style={{ height: "70vh" }}
-              />
-              <Carousel.Caption>
-                <h3>Shang-Chi The Legends of The Ten Rings</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={500}>
-              <img
-                className="d-block w-100"
-                src={endgameImage}
-                alt="Second slide"
-                style={{ height: "70vh" }}
-              />
-              <Carousel.Caption>
-                <h3>Avengers: Endgame</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={doctorImage}
-                alt="Third slide"
-                style={{ height: "70vh" }}
-              />
-              <Carousel.Caption>
-                <h3>Doctor Strange in The Multiverse of Madness</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-
           <Container>
             {successResponse.isSuccess && (
               <Alert
