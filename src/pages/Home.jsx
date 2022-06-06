@@ -9,6 +9,7 @@ import {
   Modal,
   Alert,
   Spinner,
+  Carousel,
 } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -18,6 +19,9 @@ import "./All.css";
 import { BiEdit } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import DeleteImage from "../images/folder.png";
+import shangchiImage from "../images/shang-chi.jpg";
+import endgameImage from "../images/endgame.jpg";
+import doctorImage from "../images/doctor-strange";
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -166,18 +170,11 @@ function Home() {
     }
   };
 
-  // const update = async (e, post) => {
-  //   e.preventDefault();
-
-  //   // console.log(post.id);
-  //   setPosts(post);
-  //   console.log(post);
-  // };
-
   return isLoggedIn ? (
     <>
       {loading ? (
         <div className="text-center" style={{ marginTop: "15rem" }}>
+          <h2 className="mb-2">Please Wait</h2>
           <Spinner
             animation="border"
             variant="dark"
@@ -250,6 +247,41 @@ function Home() {
                   </Button>
                 </Dropdown.Menu>
               </Dropdown>
+            </div>
+
+            <div>
+              <Carousel>
+                <Carousel.Item interval={1000}>
+                  <img
+                    className="d-block w-100"
+                    src={shangchiImage}
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>Shang-Chi The Legends of The Ten Rings</h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item interval={500}>
+                  <img
+                    className="d-block w-100"
+                    src={endgameImage}
+                    alt="Second slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>Avengers: Endgame</h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={doctorImage}
+                    alt="Third slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
             </div>
 
             <Row>
