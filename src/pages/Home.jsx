@@ -21,7 +21,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import DeleteImage from "../images/folder.png";
 import shangchiImage from "../images/shang-chi.jpg";
 import endgameImage from "../images/endgame.jpg";
-import doctorImage from "../images/doctor-strange";
+import doctorImage from "../images/doctor-strange.jpeg";
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
