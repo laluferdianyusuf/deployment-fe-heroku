@@ -180,7 +180,7 @@ function Home() {
         <div className="text-center" style={{ marginTop: "15rem" }}>
           <Spinner
             animation="border"
-            variant="danger"
+            variant="dark"
             style={{ height: "4rem", width: "4rem" }}
           />
         </div>
