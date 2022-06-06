@@ -178,7 +178,7 @@ function Home() {
     <>
       {loading ? (
         <div className="text-center" style={{ marginTop: "15rem" }}>
-          <ClipLoader color={color} loading={loading} size={35} />
+          <ClipLoader color={color} size={35} />
         </div>
       ) : (
         <Container>
