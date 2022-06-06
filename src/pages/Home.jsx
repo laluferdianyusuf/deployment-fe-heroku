@@ -8,6 +8,7 @@ import {
   Dropdown,
   Modal,
   Alert,
+  Spinner,
 } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -17,7 +18,6 @@ import "./All.css";
 import { BiEdit } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import DeleteImage from "../images/folder.png";
-import ClipLoader from "react-spinners/ClipLoader";
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -178,7 +178,11 @@ function Home() {
     <>
       {loading ? (
         <div className="text-center" style={{ marginTop: "15rem" }}>
-          <ClipLoader color={color} size={35} />
+          <Spinner
+            animation="border"
+            variant="primary"
+            style={{ height: "4rem", width: "4rem" }}
+          />
         </div>
       ) : (
         <Container>
