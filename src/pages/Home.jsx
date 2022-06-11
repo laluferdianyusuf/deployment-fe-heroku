@@ -195,6 +195,7 @@ function Home() {
       ) : (
         <>
           <Container>
+            {/* alert success */}
             {successResponse.isSuccess && (
               <Alert
                 variant="success"
@@ -205,7 +206,9 @@ function Home() {
                 {successResponse.message}
               </Alert>
             )}
+            {/* alert success */}
 
+            {/* alert error */}
             {errorResponse.isError && (
               <Alert
                 variant="danger"
@@ -216,8 +219,10 @@ function Home() {
                 {errorResponse.message}
               </Alert>
             )}
+            {/* alert error */}
 
             <div className="p-3">
+              {/* header */}
               <div className="d-flex mb-5 dropdown-content">
                 <Link to="/about">
                   <Button variant="success" style={buttonSuccess}>
@@ -254,7 +259,9 @@ function Home() {
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
+              {/* header */}
 
+              {/* category and create */}
               <div className="d-flex mb-2 create-icon gap-3 ms-3">
                 <a
                   className="text-white text-decoration-none align-self-center"
@@ -290,8 +297,10 @@ function Home() {
                   </Button>
                 </Link>
               </div>
+              {/* category and create */}
 
               <Row>
+                {/* card */}
                 {posts.map((post) => (
                   <Col md={4} key={post.id} className="card-column mb-4">
                     <Card className="card-container">
@@ -335,7 +344,9 @@ function Home() {
                     </Card>
                   </Col>
                 ))}
+                {/* card */}
 
+                {/* modal */}
                 <Modal
                   show={showModal}
                   onHide={handleCloseModal}
@@ -371,6 +382,7 @@ function Home() {
                     </div>
                   </Modal.Footer>
                 </Modal>
+                {/* modal */}
               </Row>
             </div>
           </Container>
