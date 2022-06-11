@@ -11,12 +11,12 @@ export default function Update() {
   const { id } = useParams();
 
   const buttonBorder = {
-    borderRadius: "0",
+    borderRadius: "10px",
   };
 
   const buttonPrimary = {
     backgroundColor: "rgb(10, 2, 77)",
-    borderRadius: "0px",
+    borderRadius: "10px",
   };
 
   const [errorResponse, setErrorResponse] = useState({
@@ -64,14 +64,7 @@ export default function Update() {
   };
 
   return (
-    <Card
-      className="w-50 card-create"
-      style={{
-        margin: "6% 25%",
-        border: "2px solid rgba(119, 0, 0, .2)",
-        backgroundColor: "rgba(37, 36, 36, 0.507)",
-      }}
-    >
+    <Card className="w-50 card-create">
       <Container className="my-3 w-75">
         <h1 className="mb-3 text-center text-white">Update Post</h1>
         <Form onSubmit={onUpdate} className="form-create">

@@ -17,18 +17,11 @@ export default function Create() {
 
   const buttonPrimary = {
     backgroundColor: "rgb(10, 2, 77)",
-    borderRadius: "0px",
+    borderRadius: "10px",
   };
 
   const buttonBorder = {
-    borderRadius: "0px",
-  };
-
-  const inputBorder = {
-    border: "1px solid rgba(119, 0, 0, .3)",
-    borderRadius: "0px",
-    backgroundColor: "rgba(37, 36, 36, 0.507)",
-    color: "white",
+    borderRadius: "10px",
   };
 
   const onCreate = async (e) => {
@@ -71,14 +64,7 @@ export default function Create() {
   };
 
   return (
-    <Card
-      className="w-50 card-create"
-      style={{
-        margin: "6% 25%",
-        border: "2px solid rgba(119, 0, 0, .2)",
-        backgroundColor: "rgba(37, 36, 36, 0.507)",
-      }}
-    >
+    <Card className="w-50 card-create">
       <Container className="my-3 w-75">
         <h1 className="mb-3 text-center text-white">Create Post</h1>
         <Form onSubmit={onCreate} className="form-create">

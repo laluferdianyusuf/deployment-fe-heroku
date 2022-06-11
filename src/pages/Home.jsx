@@ -18,6 +18,8 @@ import "./All.css";
 import { BiEdit } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import DeleteImage from "../images/folder.png";
+import CreateImage from "../images/page.png";
+import LogoutImage from "../images/logout.png";
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -52,18 +54,31 @@ function Home() {
 
   const buttonSuccess = {
     backgroundColor: "rgb(1, 66, 1)",
-    borderRadius: "0px",
+    borderRadius: "10px",
+    padding: "6px 20px",
   };
   const buttonPrimary = {
-    backgroundColor: "rgb(10, 2, 77)",
-    borderRadius: "0px",
+    backgroundColor: "rgba(10, 2, 77, 0)",
+    borderRadius: "10px",
   };
   const buttonDanger = {
-    backgroundColor: "rgb(119, 0, 0)",
-    borderRadius: "0px",
+    border: "2px solid rgba(119, 0, 0, 0)",
+    backgroundColor: "rgba(119, 0, 0, 0)",
+    borderRadius: "10px",
+    transition: "all 0.3s ease",
+    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.4)",
+    marginBottom: "10px",
+  };
+
+  const buttonDangerV2 = {
+    border: "2px solid rgba(119, 0, 0, 0.4)",
+    backgroundColor: "rgba(119, 0, 0, 0.5)",
+    borderRadius: "10px",
+    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.5)",
+    margin: "0 12.5%",
   };
   const buttonBorder = {
-    borderRadius: "0px",
+    borderRadius: "10px",
   };
 
   useEffect(() => {
@@ -206,24 +221,18 @@ function Home() {
               <div className="d-flex mb-5 dropdown-content">
                 <Link to="/about">
                   <Button variant="success" style={buttonSuccess}>
-                    Go to about page
+                    About page
                   </Button>
                 </Link>
 
                 <h4
-                  className="mb-0 ms-auto text-white"
+                  className="ms-auto text-white"
                   style={{ alignSelf: "center" }}
                 >
                   MARVEL CINEMATIC UNIVERSE
                 </h4>
 
-                <Link to="/create" className="ms-auto">
-                  <Button variant="primary" style={buttonPrimary}>
-                    Create
-                  </Button>
-                </Link>
-
-                <Dropdown className="ms-2">
+                <Dropdown className="ms-auto">
                   <Dropdown.Toggle
                     variant="outline-secondary"
                     style={buttonBorder}
@@ -240,10 +249,46 @@ function Home() {
                       style={buttonDanger}
                       onClick={(e) => logout(e)}
                     >
-                      Logout
+                      <img src={LogoutImage} className="w-75 " alt="" />
                     </Button>
                   </Dropdown.Menu>
                 </Dropdown>
+              </div>
+
+              <div className="d-flex mb-2 create-icon gap-3 ms-3">
+                <a
+                  className="text-white text-decoration-none align-self-center"
+                  href=""
+                >
+                  Latest
+                </a>
+                <a
+                  className="text-white text-decoration-none align-self-center"
+                  href=""
+                >
+                  Popular
+                </a>
+                <p className="fw-bold">|</p>
+                <a
+                  className="text-decoration-none align-self-center"
+                  href=""
+                  style={{ color: "red" }}
+                >
+                  Action
+                </a>
+                <a
+                  className="text-decoration-none align-self-center"
+                  href=""
+                  style={{ color: "blue" }}
+                >
+                  Sci-Fi
+                </a>
+
+                <Link to="/create" className="ms-auto align-self-center mb-4">
+                  <Button variant="primary" style={buttonPrimary}>
+                    <img src={CreateImage} className="w-75" alt="" />
+                  </Button>
+                </Link>
               </div>
 
               <Row>
@@ -259,13 +304,19 @@ function Home() {
                           <Card.Title style={{ height: "55px" }}>
                             {post.title}{" "}
                           </Card.Title>
-                          <Card.Text
-                            style={{ textAlign: "justify", height: "140px" }}
-                          >
+                          <Card.Text style={{ textAlign: "justify" }}>
                             {post.description}
                           </Card.Text>
+                          <Button
+                            style={buttonDangerV2}
+                            variant="danger"
+                            className="w-75"
+                          >
+                            Learn More
+                          </Button>
                         </Card.Body>
                       </div>
+
                       <div className="button-action" style={{ width: "20px" }}>
                         <a
                           onClick={(e) => handleShowModal(e, post)}
@@ -288,16 +339,11 @@ function Home() {
                 <Modal
                   show={showModal}
                   onHide={handleCloseModal}
+                  ClassName="bg-black"
                   aria-labelledby="contained-modal-title-vcenter"
                   centered
                 >
-                  <Modal.Header
-                    className="d-block"
-                    style={{
-                      borderBottom: "1px solid rgb(119, 0, 0)",
-                      borderRadius: "8px",
-                    }}
-                  >
+                  <Modal.Header className="d-block">
                     <Modal.Title className="text-black text-center">
                       ------ Are You Sure ? ------
                     </Modal.Title>
@@ -305,22 +351,24 @@ function Home() {
                       <img src={DeleteImage} alt="" />
                     </Modal.Body>
                   </Modal.Header>
-                  <Modal.Footer style={{ borderTop: "2px solid white" }}>
-                    <Button
-                      variant="secondary"
-                      style={buttonBorder}
-                      onClick={handleCloseModal}
-                    >
-                      Close
-                    </Button>
+                  <Modal.Footer>
+                    <div className="d-flex gap-2 me-5 ms-5">
+                      <Button
+                        variant="secondary"
+                        style={buttonBorder}
+                        onClick={handleCloseModal}
+                      >
+                        Close
+                      </Button>
 
-                    <Button
-                      variant="danger"
-                      style={buttonDanger}
-                      onClick={(e) => onDelete(e)}
-                    >
-                      YES
-                    </Button>
+                      <Button
+                        variant="danger"
+                        style={buttonDangerV2}
+                        onClick={(e) => onDelete(e)}
+                      >
+                        YES
+                      </Button>
+                    </div>
                   </Modal.Footer>
                 </Modal>
               </Row>
