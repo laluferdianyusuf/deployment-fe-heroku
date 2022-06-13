@@ -2,6 +2,71 @@ body {
   background-color: #220f0f !important;
 }
 
+/* dropdown */
+.dropdown-content {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  padding: 0 20px 20px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.dropdown-content .dropdown-menu {
+  text-align: center;
+  border-radius: 10px;
+  background-color: #220f0f;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.75);
+  transform: translate(0, 48px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.dropdown-content .dropdown-menu button:hover {
+  padding-right: 45%;
+  transition: all 0.5 ease;
+  border: 2px solid rgba(119, 0, 0, 1) !important;
+  background-color: rgba(119, 0, 0, 1) !important;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.dropdown-content .dropdown-menu button:hover::after {
+  content: "logout";
+  position: absolute;
+  padding-left: 10px;
+  color: rgb(87, 87, 87);
+  font-weight: bold;
+}
+
+/* hero content */
+.hero-content {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #220f0fc5),
+    url(../images/avengers.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 620px;
+}
+
+.hero-content h1 {
+  padding-top: 20%;
+}
+
+.hero-content h1::before {
+  content: "MARVEL";
+  padding-right: 15px;
+  color: #f40303;
+  text-shadow: 0 8px 5px black;
+}
+
+.hero-content p {
+  width: 100px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: #f40303;
+  margin: 0 31%;
+  box-shadow: 0 5px 5px black;
+}
+
+/* body content */
 .modal-content {
   border-radius: 10px !important;
   background-color: rgba(0, 0, 0, 0.7) !important;
@@ -63,39 +128,6 @@ body {
   background: rgba(7, 7, 7, 0.7);
 }
 
-/* dropdown */
-.dropdown-content {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  padding: 0 20px 20px 20px;
-  border-radius: 10px;
-}
-.dropdown-content .dropdown-menu {
-  text-align: center;
-  border-radius: 10px;
-  background-color: rgba(39, 38, 38, 1);
-  color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.75);
-  transform: translate(0, 48px) !important;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
-}
-
-.dropdown-content .dropdown-menu button:hover {
-  padding-right: 45%;
-  transition: all 0.5 ease;
-  border: 2px solid rgba(119, 0, 0, 1) !important;
-  background-color: rgba(119, 0, 0, 1) !important;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-}
-
-.dropdown-content .dropdown-menu button:hover::after {
-  content: "logout";
-  position: absolute;
-  padding-left: 10px;
-  color: rgb(87, 87, 87);
-  font-weight: bold;
-}
-
 /* create and update page */
 .card-create {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -107,19 +139,19 @@ body {
 }
 
 .create-icon a:nth-child(1):hover {
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   padding: 0 5px;
 }
 .create-icon a:nth-child(2):hover {
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   padding: 0 5px;
 }
 .create-icon a:nth-child(4):hover {
-  border-bottom: 2px solid red;
+  border-bottom: 1px solid red;
   padding: 0 5px;
 }
 .create-icon a:nth-child(5):hover {
-  border-bottom: 2px solid blue;
+  border-bottom: 1px solid blue;
   padding: 0 5px;
 }
 
@@ -141,9 +173,11 @@ body {
 }
 
 .create-icon a button:hover {
-  border: 1px solid #333;
+  border: 1px solid transparent;
   padding-right: 6%;
   box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.5);
+  background-color: #333 !important;
+  overflow: hidden;
 }
 
 .create-icon a button:hover::after {
@@ -521,4 +555,100 @@ body {
   left: 0;
   color: #f40303;
   font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* login form */
+  .login-box {
+    width: 90%;
+    transform: translate(5.5%, 10%);
+  }
+
+  .login-box form .option-login {
+    flex-wrap: wrap-reverse;
+  }
+
+  .login-box form .option-login button {
+    width: 100%;
+  }
+
+  /* register form */
+  .register-box {
+    width: 90%;
+    transform: translate(5.5%, 4%);
+  }
+  .register-box form div .button-submit {
+    width: 100%;
+  }
+
+  /* home page */
+  .dropdown-content {
+    width: 90% !important;
+  }
+
+  /* hero content */
+  .hero-content {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), #220f0fc5),
+      url(../images/avengers.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 620px;
+  }
+
+  .hero-content h1 {
+    padding-top: 60%;
+    display: flex;
+    flex-direction: column;
+    line-height: 50px;
+  }
+
+  .hero-content p {
+    width: 50px;
+    height: 3px;
+    border-radius: 10px;
+    margin: -16% 40.5%;
+  }
+
+  .create-icon {
+    flex-direction: column;
+    line-height: 30px;
+    justify-content: start;
+  }
+
+  .create-icon p {
+    display: none;
+  }
+
+  .create-icon a:nth-child(1) {
+    margin-bottom: 10px;
+    align-self: start !important;
+  }
+  .create-icon a:nth-child(2) {
+    margin-bottom: 10px;
+    align-self: start !important;
+  }
+  .create-icon a:nth-child(4) {
+    margin-bottom: 10px;
+    align-self: start !important;
+  }
+  .create-icon a:nth-child(5) {
+    margin-bottom: 10px;
+    align-self: start !important;
+  }
+
+  .create-icon a button {
+    right: 25px;
+    top: 101%;
+  }
+
+  .create-icon a button:hover {
+    padding-right: 20%;
+    background-color: transparent !important;
+  }
+
+  .create-icon a button:hover::after {
+    padding-left: 10px;
+    color: rgb(133, 131, 131);
+  }
 }

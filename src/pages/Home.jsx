@@ -20,6 +20,8 @@ import { TiDeleteOutline } from "react-icons/ti";
 import DeleteImage from "../images/folder.png";
 import CreateImage from "../images/page.png";
 import LogoutImage from "../images/logout.png";
+import SpiderImage from "../images/spiderman.png";
+import UserImage from "../images/user.png";
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -79,6 +81,8 @@ function Home() {
   };
   const buttonBorder = {
     borderRadius: "10px",
+    border: "2px solid transparent",
+    backgroundColor: "transparent",
   };
 
   useEffect(() => {
@@ -194,7 +198,64 @@ function Home() {
         </div>
       ) : (
         <>
-          <Container>
+          {/* header */}
+          <Container
+            className="fixed-top pt-3 dropdown-content"
+            style={{ backgroundColor: "#220f0f" }}
+          >
+            <div className="d-flex ps-2">
+              <Link to="/about">
+                <Button variant="success" style={buttonSuccess}>
+                  About page
+                </Button>
+              </Link>
+
+              <h4 className="ms-auto text-white text-center m-0">
+                --------------------{" "}
+                <a href="#hero" className="text-decoration-none">
+                  <img src={SpiderImage} style={{ width: "30px" }} alt="" />{" "}
+                </a>
+                --------------------
+              </h4>
+
+              <Dropdown className="ms-auto pe-2">
+                <Dropdown.Toggle
+                  variant="outline-secondary"
+                  style={buttonBorder}
+                  id="dropdown-basic"
+                >
+                  <img
+                    src={UserImage}
+                    className="pe-2"
+                    style={{ width: "68%" }}
+                    alt=""
+                  />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="dropdown-menu w-100">
+                  <p>{user.name}</p>
+
+                  <Button
+                    variant="danger"
+                    style={buttonDanger}
+                    onClick={(e) => logout(e)}
+                  >
+                    <img src={LogoutImage} className="w-75 " alt="" />
+                  </Button>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          </Container>
+          {/* header */}
+
+          {/* hero */}
+          <div className="hero-content text-center" id="hero">
+            <h1 className="text-white">CINEMATIC UNIVERSE</h1>
+            <p></p>
+          </div>
+          {/* hero */}
+
+          <Container className="mt-2">
             {/* alert success */}
             {successResponse.isSuccess && (
               <Alert
@@ -222,70 +283,31 @@ function Home() {
             {/* alert error */}
 
             <div className="p-3">
-              {/* header */}
-              <div className="d-flex mb-5 dropdown-content">
-                <Link to="/about">
-                  <Button variant="success" style={buttonSuccess}>
-                    About page
-                  </Button>
-                </Link>
-
-                <h4
-                  className="ms-auto text-white"
-                  style={{ alignSelf: "center" }}
-                >
-                  MARVEL CINEMATIC UNIVERSE
-                </h4>
-
-                <Dropdown className="ms-auto">
-                  <Dropdown.Toggle
-                    variant="outline-secondary"
-                    style={buttonBorder}
-                    id="dropdown-basic"
-                  >
-                    {user.name}
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu className="dropdown-menu w-100">
-                    <p>{user.name}</p>
-
-                    <Button
-                      variant="danger"
-                      style={buttonDanger}
-                      onClick={(e) => logout(e)}
-                    >
-                      <img src={LogoutImage} className="w-75 " alt="" />
-                    </Button>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              {/* header */}
-
               {/* category and create */}
               <div className="d-flex mb-2 create-icon gap-3 ms-3">
                 <a
                   className="text-white text-decoration-none align-self-center"
-                  href=""
+                  href="#"
                 >
                   Latest
                 </a>
                 <a
                   className="text-white text-decoration-none align-self-center"
-                  href=""
+                  href="#"
                 >
                   Popular
                 </a>
                 <p className="fw-bold">|</p>
                 <a
                   className="text-decoration-none align-self-center"
-                  href=""
+                  href="#"
                   style={{ color: "red" }}
                 >
                   Action
                 </a>
                 <a
                   className="text-decoration-none align-self-center"
-                  href=""
+                  href="#"
                   style={{ color: "blue" }}
                 >
                   Sci-Fi

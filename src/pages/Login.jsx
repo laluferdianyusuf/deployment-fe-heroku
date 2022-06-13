@@ -97,7 +97,7 @@ export default function Login() {
           <Alert variant="danger">{errorResponse.message}</Alert>
         )}
 
-        <div className="d-flex gap-2">
+        <div className="d-flex gap-2 option-login">
           <Button className="button-submit" type="submit">
             <span></span>
             <span></span>
