@@ -7,7 +7,6 @@ export default function Update() {
   const navigate = useNavigate();
   const titleField = useRef("");
   const descriptionField = useRef("");
-  const [pictureField, setPictureField] = useState();
   const { id } = useParams();
 
   const buttonBorder = {
@@ -32,9 +31,7 @@ export default function Update() {
 
       createPostPayload.append("title", titleField.current.value);
       createPostPayload.append("description", descriptionField.current.value);
-      files.forEach((element) => {
-        createPostPayload.append("picture", element);
-      });
+      createPostPayload.append("picture", element);
 
       const token = localStorage.getItem("token");
 
@@ -81,10 +78,7 @@ export default function Update() {
           </Form.Group>
 
           <Form.Group className="mb-3 form-create_box">
-            <Form.Control
-              type="file"
-              onChange={(e) => setPictureField(e.target.files[0])}
-            />
+            <Form.Control type="file" />
           </Form.Group>
 
           {errorResponse.isError && (

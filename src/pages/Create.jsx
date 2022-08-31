@@ -31,9 +31,7 @@ export default function Create() {
 
       createPostPayload.append("title", titleField.current.value);
       createPostPayload.append("description", descriptionField.current.value);
-      files.forEach((element) => {
-        createPostPayload.append("picture", element);
-      });
+      createPostPayload.append("picture", element);
 
       const token = localStorage.getItem("token");
 
