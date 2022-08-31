@@ -32,7 +32,9 @@ export default function Update() {
 
       createPostPayload.append("title", titleField.current.value);
       createPostPayload.append("description", descriptionField.current.value);
-      createPostPayload.append("picture", pictureField);
+      files.forEach((element) => {
+        createPostPayload.append("picture", element);
+      });
 
       const token = localStorage.getItem("token");
 

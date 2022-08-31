@@ -8,7 +8,6 @@ export default function Create() {
   const navigate = useNavigate();
   const titleField = useRef("");
   const descriptionField = useRef("");
-  const [pictureField, setPictureField] = useState();
 
   const [errorResponse, setErrorResponse] = useState({
     isError: false,
@@ -32,7 +31,9 @@ export default function Create() {
 
       createPostPayload.append("title", titleField.current.value);
       createPostPayload.append("description", descriptionField.current.value);
-      createPostPayload.append("picture", pictureField);
+      files.forEach((element) => {
+        createPostPayload.append("picture", element);
+      });
 
       const token = localStorage.getItem("token");
 
