@@ -1,8 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Form, Container, Button, Alert, Card } from "react-bootstrap";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./All.css";
+import { MdOutlinePhotoCamera } from "react-icons/md";
+import { useDropzone } from "react-dropzone";
 
 export default function Create() {
   const navigate = useNavigate();
@@ -31,7 +33,9 @@ export default function Create() {
 
       createPostPayload.append("title", titleField.current.value);
       createPostPayload.append("description", descriptionField.current.value);
-      createPostPayload.append("picture", element);
+      files.forEach((element) => {
+        createPostPayload.append("picture", element);
+      });
 
       const token = localStorage.getItem("token");
 
@@ -40,8 +44,8 @@ export default function Create() {
         createPostPayload,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -62,6 +66,73 @@ export default function Create() {
     }
   };
 
+  const thumb = {
+    display: "inline-flex",
+    borderRadius: 2,
+    border: "1px solid #eaeaea",
+    marginBottom: 8,
+    marginRight: 8,
+    width: 100,
+    height: 100,
+    padding: 4,
+    boxSizing: "border-box",
+  };
+
+  const thumbInner = {
+    display: "flex",
+    minWidth: 0,
+    overflow: "hidden",
+  };
+
+  const img = {
+    display: "block",
+    width: "auto",
+    height: "100%",
+  };
+
+  const buttonUpload = {
+    borderRadius: "12px",
+    backgroundColor: "rgba(226, 212, 240, 1)",
+    border: "1px solid rgba(226, 212, 240, 1)",
+  };
+
+  const [files, setFiles] = useState([]);
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: {
+      "image/*": [],
+    },
+    onDrop: (acceptedFiles) => {
+      setFiles(
+        acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        )
+      );
+    },
+  });
+
+  const thumbs = files.map((file) => (
+    <div style={thumb} key={file.name}>
+      <div style={thumbInner}>
+        <img
+          src={file.preview}
+          style={img}
+          alt=""
+          // Revoke data uri after image is loaded
+          onLoad={() => {
+            URL.revokeObjectURL(file.preview);
+          }}
+        />
+      </div>
+    </div>
+  ));
+
+  useEffect(() => {
+    // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
+    return () => files.forEach((file) => URL.revokeObjectURL(file.preview));
+  }, []);
+
   return (
     <Card className="w-50 card-create">
       <Container className="my-3 w-75">
@@ -77,11 +148,30 @@ export default function Create() {
             <label>Description</label>
           </Form.Group>
 
-          <Form.Group className="mb-3 form-create_box">
-            <Form.Control
-              type="file"
-              onChange={(e) => setPictureField(e.target.files[0])}
-            />
+          <Form.Group className="mb-3 upload ">
+            <section>
+              <div {...getRootProps({ className: "dropzone" })}>
+                <input {...getInputProps()} />
+                {files.length === 0 ? (
+                  <Button
+                    variant="secondary"
+                    style={buttonUpload}
+                    className="upload-image "
+                  >
+                    <h2>
+                      <MdOutlinePhotoCamera
+                        style={{
+                          fontSize: "36px",
+                          color: "rgba(113, 38, 181, 1)",
+                        }}
+                      />
+                    </h2>
+                  </Button>
+                ) : (
+                  <div>{thumbs}</div>
+                )}
+              </div>
+            </section>
           </Form.Group>
 
           {errorResponse.isError && (

@@ -327,10 +327,7 @@ function Home() {
                   <Col md={4} key={post.id} className="card-column mb-4">
                     <Card className="card-container">
                       <div className="card-image">
-                        <img
-                          src={`https://api-instagram-be.herokuapp.com/public/files/${post.picture}`}
-                          alt=""
-                        />
+                        <img src={`${post.picture[0]}`} alt="" />
                         <Card.Body>
                           <Card.Title style={{ height: "55px" }}>
                             {post.title}{" "}

@@ -39,8 +39,8 @@ export default function Login() {
         setLoading(!loading);
       }
     } catch (err) {
-      console.log(err);
       const response = err.response.data;
+      console.log(response);
 
       setErrorResponse({
         isError: true,
