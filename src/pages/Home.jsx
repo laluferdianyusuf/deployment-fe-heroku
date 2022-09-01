@@ -26,11 +26,13 @@ import UserImage from "../images/user.png";
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [user, setUser] = useState({});
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState({});
   const [isRefresh, setIsRefresh] = useState(false);
   const dispatch = useDispatch();
   const [postDelete, setPostDelete] = useState();
   const [loading, setLoading] = useState(true);
+
+  console.log(posts.title);
 
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
@@ -141,7 +143,6 @@ function Home() {
     );
     //get response data
     const data = await response.data.data.Loaded_Posts;
-    console.log(data);
 
     //assign response data to state "posts"
     setPosts(data);
@@ -327,7 +328,7 @@ function Home() {
                   <Col md={4} key={post.id} className="card-column mb-4">
                     <Card className="card-container">
                       <div className="card-image">
-                        <img src={`${post.picture[0]}`} alt="" />
+                        <Card.Img src={`${post.picture}`} alt="" />
                         <Card.Body>
                           <Card.Title style={{ height: "55px" }}>
                             {post.title}{" "}
