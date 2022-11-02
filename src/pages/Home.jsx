@@ -26,13 +26,11 @@ import UserImage from "../images/user.png";
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [user, setUser] = useState({});
-  const [posts, setPosts] = useState({});
+  const [posts, setPosts] = useState([]);
   const [isRefresh, setIsRefresh] = useState(false);
   const dispatch = useDispatch();
   const [postDelete, setPostDelete] = useState();
   const [loading, setLoading] = useState(true);
-
-  console.log(posts.title);
 
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
@@ -120,12 +118,25 @@ function Home() {
       }
     };
 
+    const getDataAll = async () => {
+      //fetching
+      const response = await axios.get(
+        "https://api-instagram-be.herokuapp.com/api/posts"
+      );
+      //get response data
+      const data = await response.data.data.Loaded_Posts;
+      console.log(data);
+
+      //assign response data to state "posts"
+      setPosts(data);
+    };
+
     setTimeout(() => {
       setLoading(false);
     }, 2000);
 
     validateLogin();
-    fetchData();
+    getDataAll();
     setIsRefresh(false);
   }, [isRefresh]);
 
@@ -134,18 +145,6 @@ function Home() {
 
     setIsLoggedIn(false);
     setUser({});
-  };
-
-  const fetchData = async () => {
-    //fetching
-    const response = await axios.get(
-      "https://api-instagram-be.herokuapp.com/api/posts"
-    );
-    //get response data
-    const data = await response.data.data.Loaded_Posts;
-
-    //assign response data to state "posts"
-    setPosts(data);
   };
 
   const onDelete = async (e) => {
@@ -324,17 +323,19 @@ function Home() {
 
               <Row>
                 {/* card */}
-                {posts.map((post) => (
-                  <Col md={4} key={post.id} className="card-column mb-4">
+                {posts.map((data) => (
+                  <Col md={4} key={data.id} className="card-column mb-4">
                     <Card className="card-container">
                       <div className="card-image">
-                        <Card.Img src={`${post.picture}`} alt="" />
+                        <Card.Img
+                          src={`${data.picture ? data.picture[0] : ""}`}
+                        />
                         <Card.Body>
                           <Card.Title style={{ height: "55px" }}>
-                            {post.title}{" "}
+                            {data.title}{" "}
                           </Card.Title>
                           <Card.Text style={{ textAlign: "justify" }}>
-                            {post.description}
+                            {data.description}
                           </Card.Text>
                           <Button
                             style={buttonDangerV2}
@@ -348,14 +349,14 @@ function Home() {
 
                       <div className="button-action" style={{ width: "20px" }}>
                         <a
-                          onClick={(e) => handleShowModal(e, post)}
+                          onClick={(e) => handleShowModal(e, data)}
                           style={{ color: "red", cursor: "pointer" }}
                         >
                           <TiDeleteOutline style={{ fontSize: "26px" }} />
                         </a>
 
                         <Link
-                          to={`/update/${post.id}`}
+                          to={`/update/${data.id}`}
                           style={{ color: "white", fontSize: "24px" }}
                         >
                           <BiEdit style={{ fontSize: "24px" }} />
@@ -375,7 +376,7 @@ function Home() {
                   centered
                 >
                   <Modal.Header className="d-block">
-                    <Modal.Title className="text-black text-center">
+                    <Modal.Title className="text-white text-center">
                       ------ Are You Sure ? ------
                     </Modal.Title>
                     <Modal.Body className="text-center">
