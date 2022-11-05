@@ -11,20 +11,23 @@ import Login from "./pages/Login";
 import Create from "./pages/Create";
 import Update from "./pages/Update";
 import { Provider } from "react-redux";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const root = document.getElementById("root");
 render(
   <Provider store={store}>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/update/:id" element={<Update />} />
-      </Routes>
-    </Router>
+    <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/update/:id" element={<Update />} />
+        </Routes>
+      </Router>
+    </SkeletonTheme>
   </Provider>,
   root
 );

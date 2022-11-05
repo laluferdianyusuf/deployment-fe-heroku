@@ -22,6 +22,9 @@ import CreateImage from "../images/page.png";
 import LogoutImage from "../images/logout.png";
 import SpiderImage from "../images/spiderman.png";
 import UserImage from "../images/user.png";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import LoadingSkeletonImage from "../components/LoadingSkeleton";
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -31,7 +34,7 @@ function Home() {
   const dispatch = useDispatch();
   const [postDelete, setPostDelete] = useState();
   const [loading, setLoading] = useState(true);
-
+  const [loadingContent, setLoadingContent] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
     setPostDelete(null);
@@ -139,6 +142,12 @@ function Home() {
     getDataAll();
     setIsRefresh(false);
   }, [isRefresh]);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setLoadingContent(true);
+    }, 3000);
+  }, []);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -323,19 +332,34 @@ function Home() {
 
               <Row>
                 {/* card */}
+
                 {posts.map((data) => (
                   <Col md={4} key={data.id} className="card-column mb-4">
                     <Card className="card-container">
                       <div className="card-image">
-                        <Card.Img
-                          src={`${data.picture ? data.picture[0] : ""}`}
-                        />
+                        {loadingContent ? (
+                          <Card.Img src={`${data.picture[0]}`} />
+                        ) : (
+                          <LoadingSkeletonImage />
+                        )}
+
                         <Card.Body>
                           <Card.Title style={{ height: "55px" }}>
-                            {data.title}{" "}
+                            {loadingContent ? (
+                              data.title
+                            ) : (
+                              <Skeleton
+                                width={data.title}
+                                style={{ height: "40%" }}
+                              />
+                            )}
                           </Card.Title>
                           <Card.Text style={{ textAlign: "justify" }}>
-                            {data.description}
+                            {loadingContent ? (
+                              data.description
+                            ) : (
+                              <Skeleton count={6} />
+                            )}
                           </Card.Text>
                           <Button
                             style={buttonDangerV2}
