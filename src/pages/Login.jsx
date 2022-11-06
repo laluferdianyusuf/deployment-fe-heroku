@@ -87,7 +87,7 @@ export default function Login() {
 
   return (
     <div className="login-box">
-      <h2 className="fw-bold">Login</h2>
+      <h2 className="fw-bold">Sign In</h2>
       <form onSubmit={onLogin}>
         <div className="user-box">
           <input type="text" ref={emailField} required />
@@ -139,7 +139,10 @@ export default function Login() {
             Log in
           </Button>
 
-          <div className="d-flex gap-1" style={{ marginTop: "45px" }}>
+          <div
+            className="d-flex gap-1 authentication"
+            style={{ marginTop: "45px" }}
+          >
             <GoogleOAuthProvider clientId="615245282222-8tpns87f4toeomvcftf7h0rs2b3kbcui.apps.googleusercontent.com">
               <GoogleLogin
                 onSuccess={onLoginGoogleSuccess}

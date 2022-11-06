@@ -17,6 +17,7 @@ import { addUser } from "../slices/userSlice";
 import "./All.css";
 import { BiEdit } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
+import { TbArrowBigLeftLines } from "react-icons/tb";
 import DeleteImage from "../images/folder.png";
 import CreateImage from "../images/page.png";
 import LogoutImage from "../images/logout.png";
@@ -58,9 +59,11 @@ function Home() {
   });
 
   const buttonSuccess = {
-    backgroundColor: "rgb(1, 66, 1)",
+    background: "none",
+    border: "none",
+    borderBottom: "2px solid gray",
     borderRadius: "10px",
-    padding: "6px 20px",
+    padding: "6px 10px",
   };
   const buttonPrimary = {
     backgroundColor: "rgba(10, 2, 77, 0)",
@@ -215,7 +218,7 @@ function Home() {
             <div className="d-flex ps-2">
               <Link to="/about">
                 <Button variant="success" style={buttonSuccess}>
-                  About page
+                  <TbArrowBigLeftLines size={30} className="icon-arrow" />
                 </Button>
               </Link>
 

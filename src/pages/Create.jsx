@@ -17,12 +17,17 @@ export default function Create() {
   });
 
   const buttonPrimary = {
-    backgroundColor: "rgb(10, 2, 77)",
-    borderRadius: "10px",
+    background: "none",
+    borderRadius: "5px",
+    border: "none",
+    borderBottom: "2px solid #910707",
   };
 
   const buttonBorder = {
-    borderRadius: "10px",
+    background: "none",
+    borderRadius: "5px",
+    border: "none",
+    borderBottom: "2px solid grey",
   };
 
   const onCreate = async (e) => {
@@ -68,13 +73,10 @@ export default function Create() {
 
   const thumb = {
     display: "inline-flex",
-    borderRadius: 2,
+    borderRadius: "12px",
     border: "1px solid #eaeaea",
-    marginBottom: 8,
-    marginRight: 8,
-    width: 100,
+    width: "auto",
     height: 100,
-    padding: 4,
     boxSizing: "border-box",
   };
 
@@ -88,12 +90,14 @@ export default function Create() {
     display: "block",
     width: "auto",
     height: "100%",
+    borderRadius: "12px",
   };
 
   const buttonUpload = {
     borderRadius: "12px",
-    backgroundColor: "rgba(226, 212, 240, 1)",
-    border: "1px solid rgba(226, 212, 240, 1)",
+    background: "none",
+    border: "none",
+    padding: "0",
   };
 
   const [files, setFiles] = useState([]);
@@ -136,7 +140,7 @@ export default function Create() {
   return (
     <Card className="w-50 card-create">
       <Container className="my-3 w-75">
-        <h1 className="mb-3 text-center text-white">Create Post</h1>
+        <h1 className="mb-3 text-center text-white fw-bold">Create Post</h1>
         <Form onSubmit={onCreate} className="form-create">
           <Form.Group className="mb-3 form-create_box">
             <input type="text" ref={titleField} required />
@@ -158,11 +162,11 @@ export default function Create() {
                     style={buttonUpload}
                     className="upload-image "
                   >
-                    <h2>
+                    <h2 className="mb-0">
                       <MdOutlinePhotoCamera
                         style={{
                           fontSize: "36px",
-                          color: "rgba(113, 38, 181, 1)",
+                          color: "#910707",
                         }}
                       />
                     </h2>
@@ -177,8 +181,12 @@ export default function Create() {
           {errorResponse.isError && (
             <Alert variant="danger">{errorResponse.message}</Alert>
           )}
-          <div className="d-flex">
-            <Button type="submit" style={buttonPrimary}>
+          <div className="d-flex justify-content-between">
+            <Button
+              type="submit"
+              style={buttonPrimary}
+              variant="outline-secondary"
+            >
               Submit
             </Button>
             <Link to="/">
