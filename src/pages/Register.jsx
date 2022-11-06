@@ -13,8 +13,10 @@ export default function Register() {
   const passwordField = useRef("");
 
   const buttonBorder = {
-    border: "1px solid darkblue",
+    border: "1px solid transparent",
     borderRadius: "0px",
+    cursor: "pointer",
+    background: "none",
   };
 
   const [errorResponse, setErrorResponse] = useState({
@@ -54,7 +56,7 @@ export default function Register() {
 
   return (
     <div className="register-box">
-      <h2>Sign Up</h2>
+      <h2 className="fw-bold">Sign Up</h2>
 
       <form onSubmit={onRegister}>
         <div className="signup-box">
@@ -80,7 +82,7 @@ export default function Register() {
           <label>Password</label>
         </div>
 
-        <p>
+        <p className="text-secondary">
           Have an account ?{" "}
           <Link to="/login" className="text-decoration-none">
             Login
