@@ -93,10 +93,10 @@ export default function Register() {
         )}
         <div>
           <Button className="button-submit" type="submit">
+            {/* <span></span>
             <span></span>
             <span></span>
-            <span></span>
-            <span></span>
+            <span></span> */}
             Sign up
           </Button>
         </div>

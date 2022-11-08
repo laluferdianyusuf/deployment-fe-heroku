@@ -16,7 +16,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 const root = document.getElementById("root");
 render(
   <Provider store={store}>
-    <SkeletonTheme baseColor="#202020" highlightColor="#444">
+    <SkeletonTheme baseColor="#202020" highlightColor="rgb(201, 182, 182)">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

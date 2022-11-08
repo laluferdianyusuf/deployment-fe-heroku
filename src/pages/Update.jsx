@@ -22,7 +22,7 @@ export default function Update() {
     background: "none",
     borderRadius: "5px",
     border: "none",
-    borderBottom: "2px solid #910707",
+    borderBottom: "2px solid rgb(255, 153, 0)",
   };
 
   const [errorResponse, setErrorResponse] = useState({
@@ -167,7 +167,7 @@ export default function Update() {
                       <MdOutlinePhotoCamera
                         style={{
                           fontSize: "36px",
-                          color: "#910707",
+                          color: "rgb(255, 153, 0)",
                         }}
                       />
                     </h2>

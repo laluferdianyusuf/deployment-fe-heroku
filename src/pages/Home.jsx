@@ -21,7 +21,6 @@ import { TbArrowBigLeftLines } from "react-icons/tb";
 import DeleteImage from "../images/folder.png";
 import CreateImage from "../images/page.png";
 import LogoutImage from "../images/logout.png";
-import SpiderImage from "../images/spiderman.png";
 import UserImage from "../images/user.png";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -61,26 +60,24 @@ function Home() {
   const buttonSuccess = {
     background: "none",
     border: "none",
-    borderBottom: "2px solid gray",
     borderRadius: "10px",
-    padding: "6px 10px",
+    padding: "0",
   };
   const buttonPrimary = {
     backgroundColor: "rgba(10, 2, 77, 0)",
     borderRadius: "10px",
   };
   const buttonDanger = {
-    border: "2px solid rgba(119, 0, 0, 0)",
-    backgroundColor: "rgba(119, 0, 0, 0)",
+    border: "2px solid transparent",
+    backgroundColor: "transparent",
     borderRadius: "10px",
     transition: "all 0.3s ease",
-    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.4)",
     marginBottom: "10px",
   };
 
   const buttonDangerV2 = {
-    border: "2px solid rgba(119, 0, 0, 0.4)",
-    backgroundColor: "rgba(119, 0, 0, 0.5)",
+    border: "2px solid rgba(255, 153, 0, 0.4)",
+    backgroundColor: "rgba(255, 153, 0, 0.4)",
     borderRadius: "10px",
     boxShadow: "0 10px 25px rgba(0, 0, 0, 0.5)",
     margin: "0 12.5%",
@@ -211,26 +208,29 @@ function Home() {
       ) : (
         <>
           {/* header */}
-          <Container
-            className="fixed-top pt-3 dropdown-content"
-            style={{ backgroundColor: "#220f0f" }}
-          >
-            <div className="d-flex ps-2">
-              <Link to="/about">
+          <Container className="position-absolute pb-0 mt-4 dropdown-content">
+            <div className="d-flex ps-3 justify-content-between">
+              <Link
+                to="/about"
+                height={30}
+                style={{ top: "20px", left: "25px" }}
+                className="align-self-center"
+              >
                 <Button variant="success" style={buttonSuccess}>
                   <TbArrowBigLeftLines size={30} className="icon-arrow" />
                 </Button>
               </Link>
 
-              <h4 className="ms-auto text-white text-center m-0">
-                --------------------{" "}
-                <a href="#hero" className="text-decoration-none">
-                  <img src={SpiderImage} style={{ width: "30px" }} alt="" />{" "}
+              <h4 className="text-white text-center m-0 align-self-center">
+                <a
+                  href="#hero"
+                  className="text-decoration-none text-white fw-bold text-title"
+                >
+                  CU
                 </a>
-                --------------------
               </h4>
 
-              <Dropdown className="ms-auto pe-2">
+              <Dropdown className="pe-2">
                 <Dropdown.Toggle
                   variant="outline-secondary"
                   style={buttonBorder}
@@ -313,7 +313,7 @@ function Home() {
                 <a
                   className="text-decoration-none align-self-center"
                   href="#"
-                  style={{ color: "red" }}
+                  style={{ color: "rgb(255, 153, 0)" }}
                 >
                   Action
                 </a>
@@ -377,7 +377,10 @@ function Home() {
                       <div className="button-action" style={{ width: "20px" }}>
                         <a
                           onClick={(e) => handleShowModal(e, data)}
-                          style={{ color: "red", cursor: "pointer" }}
+                          style={{
+                            color: "rgb(255, 153, 0)",
+                            cursor: "pointer",
+                          }}
                         >
                           <TiDeleteOutline style={{ fontSize: "26px" }} />
                         </a>

@@ -20,7 +20,7 @@ export default function Create() {
     background: "none",
     borderRadius: "5px",
     border: "none",
-    borderBottom: "2px solid #910707",
+    borderBottom: "2px solid rgb(255, 153, 0)",
   };
 
   const buttonBorder = {
@@ -166,7 +166,7 @@ export default function Create() {
                       <MdOutlinePhotoCamera
                         style={{
                           fontSize: "36px",
-                          color: "#910707",
+                          color: "rgb(255, 153, 0)",
                         }}
                       />
                     </h2>

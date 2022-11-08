@@ -112,9 +112,9 @@ export default function Login() {
             }}
           >
             {showPassword ? (
-              <HiOutlineEyeOff size={20} color="red" />
+              <HiOutlineEyeOff size={20} color="red" title="hide" />
             ) : (
-              <HiOutlineEye size={20} />
+              <HiOutlineEye size={20} title="show" />
             )}
           </Button>
           <label>Password</label>
@@ -132,11 +132,11 @@ export default function Login() {
 
         <div className="d-flex gap-2 option-login justify-content-between">
           <Button className="button-submit" type="submit">
+            {/* <span></span>
             <span></span>
             <span></span>
-            <span></span>
-            <span></span>
-            Log in
+            <span></span> */}
+            Login
           </Button>
 
           <div

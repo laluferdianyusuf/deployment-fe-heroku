@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #220f0f !important;
+  background-color: rgba(46, 29, 16, 1) !important;
 }
 
 option {
@@ -20,6 +20,10 @@ option {
   border: transparent !important;
   padding: 0 !important;
   background: none !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+  background: transparent !important;
 }
 
 .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb span {
@@ -43,27 +47,30 @@ option {
 
 /* dropdown */
 .dropdown-content {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(46, 29, 16, 0.5);
   padding: 0 20px 20px 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
+  background-color: rgba(46, 29, 16, 0.4);
+  left: 7.5%;
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
 }
 .dropdown-content .dropdown-menu {
   text-align: center;
   border-radius: 10px;
-  background-color: #220f0f;
+  background-color: rgba(46, 29, 16, 0.5);
   color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 10px 30px rgb(46, 29, 16, 0.5);
   transform: translate(0, 48px) !important;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(46, 29, 16, 0.5);
   margin-bottom: 20px;
 }
 
 .dropdown-content .dropdown-menu button:hover {
   padding-right: 45%;
   transition: all 0.5 ease;
-  border: 2px solid rgba(119, 0, 0, 1) !important;
-  background-color: rgba(119, 0, 0, 1) !important;
+  border: 2px solid rgba(255, 153, 0, 1) !important;
+  background-color: rgba(255, 153, 0, 1) !important;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 
@@ -77,7 +84,7 @@ option {
 
 /* hero content */
 .hero-content {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), #220f0fc5),
+  background: linear-gradient(rgba(0, 0, 0, 0.8) 75%, rgba(46, 29, 16, 1)),
     url(../images/avengers.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -95,7 +102,7 @@ option {
     transform: translateX(-3px);
   }
   25% {
-    color: rgb(133, 0, 0);
+    color: rgb(255, 153, 0);
     transform: translateX(0px);
   }
   50% {
@@ -103,7 +110,7 @@ option {
     transform: translateX(3px);
   }
   75% {
-    color: rgb(133, 0, 0);
+    color: rgb(255, 153, 0);
     transform: translateX(0);
   }
   100% {
@@ -111,40 +118,51 @@ option {
     transform: translateX(-3px);
   }
 }
+
 .icon-arrow {
   animation: blink 1s linear infinite;
+}
+
+.icon-arrow:hover {
+  animation: none;
 }
 
 .hero-content h1::before {
   content: "MARVEL";
   padding-right: 15px;
-  color: #910707;
+  color: rgb(255, 153, 0);
   text-shadow: 0 8px 5px black;
+  font-weight: bold;
 }
 
 .hero-content p {
   width: 100px;
   height: 3px;
   border-radius: 10px;
-  background-color: #910707;
-  margin: 0 31%;
+  background-color: rgb(255, 153, 0);
+  margin: 0 29.8%;
   box-shadow: 0 5px 5px black;
+}
+
+.text-title::before {
+  content: "M";
+  color: rgb(255, 153, 0);
 }
 
 /* body content */
 .modal-content {
   border-radius: 10px !important;
   background-color: rgba(0, 0, 0, 0.7) !important;
-  border-top: 2px solid rgb(119, 0, 0) !important;
+  border-top: 2px solid rgba(46, 29, 16, 1) !important;
 }
 
 .modal-header {
-  border-bottom: 2px solid rgb(119, 0, 0) !important;
+  border-bottom: 2px solid rgba(46, 29, 16, 1) !important;
   border-radius: 10px;
 }
 .modal-footer {
   border-top: 0 !important;
-  border-bottom: 2px solid rgb(119, 0, 0) !important;
+  border-bottom: 2px solid rgba(46, 29, 16, 1) !important;
   border-radius: 5px !important;
   width: 50%;
   align-self: center;
@@ -169,28 +187,21 @@ option {
 
 .card-image img {
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.75);
-  width: 90%;
+  width: 95%;
   height: 390px;
-  transform: translate(5.5%, 6%);
+  transform: translate(2.5%, 2%);
   margin-bottom: 30px;
+  opacity: 0.75;
+  border: 1px solid rgb(255, 153, 0);
 }
 
 .card-column .card-container {
-  background: rgba(58, 57, 57, 0.4);
-  border: 2px solid #250f0faf;
+  background: rgba(18, 10, 0, 0.4);
+  border: 1px solid rgb(255, 153, 0);
   border-radius: 20px;
   transition: all 0.5s ease;
   color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.75);
-}
-
-.card-column .card-container:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 0, 0, 0.7),
-    0 0 50px rgba(0, 0, 0, 0.5), 0 0 100px rgba(0, 0, 0, 0.25);
-  border: 2px solid #000000a8;
-  transform: scale(1.025);
-  background: rgba(7, 7, 7, 0.7);
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.3), 0 0 15px rgba(255, 153, 0, 0.5);
 }
 
 /* create and update page */
@@ -201,6 +212,7 @@ option {
   background-color: rgba(37, 36, 36, 0.507) !important;
   border-radius: 10px !important;
   padding: 10px 0;
+  border: 1px solid rgb(255, 153, 0) !important;
 }
 
 .create-icon a:nth-child(1):hover {
@@ -212,7 +224,7 @@ option {
   padding: 0 5px;
 }
 .create-icon a:nth-child(4):hover {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid rgb(255, 153, 0);
   padding: 0 5px;
 }
 .create-icon a:nth-child(5):hover {
@@ -281,7 +293,7 @@ option {
   color: #fff;
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgb(255, 153, 0);
   outline: none;
   background: transparent;
 }
@@ -301,15 +313,15 @@ option {
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #910707;
+  color: rgb(255, 153, 0);
   font-size: 12px;
 }
 
 .login-box form .button-submit {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  color: #910707;
+  padding: 0 7px;
+  color: rgb(255, 153, 0);
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -322,11 +334,14 @@ option {
 }
 
 .login-box .button-submit:hover {
-  background: #910707;
+  background: transparent;
+  text-shadow: 0 0 5px #c2bfbf, 0 0 10px #c2bfbf;
+  font-weight: bold;
+  /* background: rgb(255, 153, 0);
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #910707, 0 0 25px #910707, 0 0 50px #910707,
-    0 0 100px #910707;
+  box-shadow: 0 0 5px rgb(255, 153, 0), 0 0 25px rgb(255, 153, 0), 0 0 50px rgb(255, 153, 0),
+    0 0 100px rgb(255, 153, 0); */
   border: 2px solid transparent;
 }
 
@@ -340,7 +355,7 @@ option {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #910707);
+  background: linear-gradient(90deg, transparent, rgb(255, 153, 0));
   animation: btn-anim1 1s linear infinite;
 }
 
@@ -359,7 +374,7 @@ option {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #910707);
+  background: linear-gradient(180deg, transparent, rgb(255, 153, 0));
   animation: btn-anim2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -379,7 +394,7 @@ option {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #910707);
+  background: linear-gradient(270deg, transparent, rgb(255, 153, 0));
   animation: btn-anim3 1s linear infinite;
   animation-delay: 0.5s;
 }
@@ -399,7 +414,7 @@ option {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #910707);
+  background: linear-gradient(360deg, transparent, rgb(255, 153, 0));
   animation: btn-anim4 1s linear infinite;
   animation-delay: 0.75s;
 }
@@ -443,7 +458,7 @@ option {
   color: #fff;
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgb(255, 153, 0);
   outline: none;
   background: transparent;
 }
@@ -478,15 +493,15 @@ option {
 .register-box .signup-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #910707;
+  color: rgb(255, 153, 0);
   font-size: 12px;
 }
 
 .register-box form .button-submit {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  color: #910707;
+  padding: 0 7px;
+  color: rgb(255, 153, 0);
   font-size: 16px;
   overflow: hidden;
   transition: 0.5s;
@@ -497,11 +512,14 @@ option {
 }
 
 .register-box .button-submit:hover {
-  background: #910707;
+  background: transparent;
+  text-shadow: 0 0 5px #c2bfbf, 0 0 10px #c2bfbf;
+  font-weight: bold;
+  /* background: rgb(255, 153, 0);
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #910707, 0 0 25px #910707, 0 0 50px #910707,
-    0 0 100px #910707;
+  box-shadow: 0 0 5px rgb(255, 153, 0), 0 0 25px rgb(255, 153, 0), 0 0 50px rgb(255, 153, 0),
+    0 0 100px rgb(255, 153, 0); */
   border: 2px solid transparent;
 }
 
@@ -515,7 +533,7 @@ option {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #910707);
+  background: linear-gradient(90deg, transparent, rgb(255, 153, 0));
   animation: btn-anim1 1s linear infinite;
 }
 
@@ -534,7 +552,7 @@ option {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #910707);
+  background: linear-gradient(180deg, transparent, rgb(255, 153, 0));
   animation: btn-anim2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -554,7 +572,7 @@ option {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #910707);
+  background: linear-gradient(270deg, transparent, rgb(255, 153, 0));
   animation: btn-anim3 1s linear infinite;
   animation-delay: 0.5s;
 }
@@ -574,7 +592,7 @@ option {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #910707);
+  background: linear-gradient(360deg, transparent, rgb(255, 153, 0));
   animation: btn-anim4 1s linear infinite;
   animation-delay: 0.75s;
 }
@@ -600,7 +618,7 @@ option {
   color: #fff;
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgb(255, 153, 0);
   outline: none;
   background: transparent;
 }
@@ -619,7 +637,7 @@ option {
 .form-create .form-create_box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #910707;
+  color: rgb(255, 153, 0);
   font-size: 12px;
 }
 
